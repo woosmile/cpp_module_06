@@ -3,13 +3,10 @@
 int main(int ac, char **av)
 {
 	(void)ac;
-
+	
 	try
 	{
-		ScalarConverter	test;
-
-		test.converter(av[1]);
-		std::cout << test.getType();
+		ScalarConverter::converter(av[1]);
 	}
 	catch(const std::exception& e)
 	{
