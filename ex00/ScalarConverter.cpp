@@ -1,6 +1,6 @@
 #include "ScalarConverter.hpp"
 
-int ScalarConverter::_type = 0;
+int ScalarConverter::_type = CHAR;
 int ScalarConverter::_precision_len = 1;
 
 char ScalarConverter::_var_char = 0;
@@ -33,26 +33,21 @@ ScalarConverter&	ScalarConverter::operator=(const ScalarConverter &other)
 
 void	ScalarConverter::checkType(const char *av)
 {
-	int	i = 0;
+	int		i = 0;
+	double	num_check;
 
 	if (av == NULL)
-	{
 		throw (ScalarConverter::Impossible());
-	}
-	else if (std::strcmp(av, "inf") == 0 || std::strcmp(av, "+inf") == 0 || \
-		std::strcmp(av, "inff") == 0 || std::strcmp(av, "+inff") == 0)
-	{
-		throw (ScalarConverter::PositiveInfinity());
-	}
-	else if (std::strcmp(av, "-inf") == 0 || std::strcmp(av, "-inff") == 0)
-	{
-		throw (ScalarConverter::NegativeInfinity());
-	}
-	else if (std::strcmp(av, "nan") == 0)
-	{
+
+	num_check = std::strtod(av, NULL);
+
+	if (num_check != num_check)
 		throw (ScalarConverter::NotaNumber());
-	}
-	
+	else if (num_check == INFINITY)
+		throw (ScalarConverter::PositiveInfinity());
+	else if (num_check == -INFINITY)
+		throw (ScalarConverter::NegativeInfinity());
+
 	if (std::isdigit(av[i]) > 0 || av[i] == '-' || av[i] == '+')
 	{
 		_type = INT;

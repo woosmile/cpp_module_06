@@ -6,15 +6,16 @@
 # include <limits>
 # include <cstdlib>
 # include <cerrno>
+# include <cmath>
 
-# define CHAR 1
-# define INT 2
-# define FLOAT 3
-# define DOUBLE 4
+# define CHAR 0
+# define INT 1
+# define FLOAT 2
+# define DOUBLE 3
 
-# define SUCCESS 5
-# define FAILURE 6
-# define NOPRINT 7
+# define SUCCESS 10
+# define FAILURE 11
+# define NOPRINT 12
 
 class ScalarConverter
 {
