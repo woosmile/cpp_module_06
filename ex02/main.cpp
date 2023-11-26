@@ -8,7 +8,7 @@ int main(void)
 	base = generate();
 
 	identify(base);
-	identify(base);
+	identify(*base);
 
 	delete (base);
 
