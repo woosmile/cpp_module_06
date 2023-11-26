@@ -16,7 +16,7 @@ Base*	generate(void)
 		case 2:
 			return (new C());
 		default:
-			return (new A());
+			return (NULL);
 	}
-	return (new A());
+	return (NULL);
 }
