@@ -7,7 +7,7 @@
   - reinterpret cast
   - dynamic cast
 
-## 구현 내용
+## 과제 내용
 
 ### ex00
 - static_cast 연산자를 사용하여 char, int, float, double 간 형변환
